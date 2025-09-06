@@ -1,0 +1,35 @@
+CREATE DATABASE comercial;
+USE comercial;
+
+-- criação da tabela Clientes
+CREATE TABLE Clientes (
+    id_cliente INT PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(100) NOT NULL,
+    email VARCHAR(100) UNIQUE,
+    telefone VARCHAR(20)
+);
+
+-- criação da tabela Produtos
+CREATE TABLE Produtos (
+    id_produto INT PRIMARY KEY AUTO_INCREMENT,
+    nome_produto VARCHAR(100) NOT NULL,
+    descricao TEXT,
+    preco DECIMAL(10, 2) NOT NULL,
+    estoque INT NOT NULL
+);
+
+-- inserindo clientes (nomes novos)
+INSERT INTO Clientes (nome, email, telefone) VALUES
+('Lucas Pereira', 'lucas.pereira@email.com', '11999998888'),
+('Fernanda Costa', 'fernanda.costa@email.com', '21988887777'),
+('Rafael Almeida', 'rafael.almeida@email.com', '31977776666'),
+('Juliana Rocha', 'juliana.rocha@email.com', '41966665555'),
+('Bruno Martins', 'bruno.martins@email.com', '51955554444');
+
+-- inserindo produtos (nomes novos)
+INSERT INTO Produtos (nome_produto, descricao, preco, estoque) VALUES
+('Smartphone 5G', 'Celular moderno com suporte a rede 5G.', 3200.00, 100),
+('Fone Bluetooth', 'Fone de ouvido sem fio com cancelamento de ruído.', 350.00, 180),
+('Cadeira Gamer', 'Cadeira ergonômica para longas horas de uso.', 1200.00, 60),
+('Impressora Multifuncional', 'Imprime, copia e digitaliza documentos.', 850.00, 40),
+('HD Externo 2TB', 'Armazenamento portátil com conexão USB 3.0.', 500.00, 90);
